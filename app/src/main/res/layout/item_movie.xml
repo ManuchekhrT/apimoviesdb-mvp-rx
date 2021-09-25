@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginVertical="8dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_poster"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/pb_poster_loading"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_poster"
+            app:layout_constraintEnd_toEndOf="@id/iv_poster"
+            app:layout_constraintStart_toStartOf="@+id/iv_poster"
+            app:layout_constraintTop_toTopOf="@+id/iv_poster" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginVertical="8dp"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_poster"
+            app:layout_constraintTop_toTopOf="@+id/iv_poster"
+            tools:text="Last Stylebender" />
+
+        <TextView
+            android:id="@+id/tv_vote_average"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/black_40"
+            app:layout_constraintStart_toEndOf="@+id/iv_poster"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            tools:text="Rating: 9.8" />
+
+        <TextView
+            android:id="@+id/tv_vote_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:textColor="@color/black_40"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_vote_average"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_vote_average"
+            app:layout_constraintTop_toTopOf="@+id/tv_vote_average"
+            tools:text="Votes: 548" />
+
+        <TextView
+            android:id="@+id/tv_overview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginVertical="8dp"
+            android:textColor="@color/black_70"
+            android:textSize="13sp"
+            android:singleLine="false"
+            android:ellipsize="end"
+            android:maxLines="4"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_poster"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_poster"
+            app:layout_constraintTop_toBottomOf="@+id/tv_vote_average"
+            tools:text="Lorem ipsum" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
