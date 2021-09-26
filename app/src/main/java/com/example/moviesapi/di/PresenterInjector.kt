@@ -1,7 +1,8 @@
 package com.example.moviesapi.di
 
 import com.example.moviesapi.base.BaseView
-import com.example.moviesapi.ui.MainPresenter
+import com.example.moviesapi.ui.movies.MovieDetailPresenter
+import com.example.moviesapi.ui.movies.MoviesPresenter
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -16,7 +17,8 @@ interface PresenterInjector {
      * Injects required dependencies into the specified MainPresenter.
      * @param mainPresenter MainPresenter in which to inject the dependencies
      */
-    fun inject(mainPresenter: MainPresenter)
+    fun inject(movieDetailPresenter: MovieDetailPresenter)
+    fun inject(moviesPresenter: MoviesPresenter)
 
     @Component.Builder
     interface Builder {

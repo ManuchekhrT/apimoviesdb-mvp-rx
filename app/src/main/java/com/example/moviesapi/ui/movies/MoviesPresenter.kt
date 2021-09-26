@@ -1,4 +1,4 @@
-package com.example.moviesapi.ui
+package com.example.moviesapi.ui.movies
 
 import com.example.moviesapi.base.BasePresenter
 import com.example.moviesapi.network.MovieApi
@@ -8,7 +8,7 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class MainPresenter(mainView: MainView) : BasePresenter<MainView>(mainView) {
+class MoviesPresenter(mainView: MoviesView) : BasePresenter<MoviesView>(mainView) {
 
     @Inject
     lateinit var movieApi: MovieApi

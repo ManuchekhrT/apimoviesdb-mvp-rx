@@ -1,4 +1,4 @@
-package com.example.moviesapi.ui
+package com.example.moviesapi.ui.movies
 
 import android.content.Context
 import android.graphics.drawable.Drawable
@@ -19,7 +19,7 @@ import com.example.moviesapi.extensions.BASE_MOVIES_IMAGE_API
 import com.example.moviesapi.model.Movies
 import kotlinx.android.synthetic.main.item_movie.view.*
 
-class MovieAdapter :
+class MovieAdapter(val clickListener: OnMoviesListClickListener) :
     ListAdapter<Movies.Movie, RecyclerView.ViewHolder>(TaskDiffCallBack()) {
 
     //This check runs on background thread
@@ -40,15 +40,20 @@ class MovieAdapter :
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val movie = getItem(position)
-        (holder as MvViewHolder).bind(movie)
+        (holder as MvViewHolder).apply {
+            bind(movie)
+        }
     }
 
-    inner class MvViewHolder(itemView: View, private val context: Context) : RecyclerView.ViewHolder(itemView) {
+    inner class MvViewHolder(itemView: View, private val context: Context) :
+        RecyclerView.ViewHolder(itemView) {
 
         fun bind(movieItem: Movies.Movie?) {
             itemView.tv_title.text = movieItem?.title
-            itemView.tv_vote_average.text = movieItem?.voteAverage.toString()
-            itemView.tv_vote_count.text = movieItem?.voteCount.toString()
+            itemView.tv_vote_average.text =
+                context.getString(R.string.rating, movieItem?.voteAverage.toString())
+            itemView.tv_vote_count.text =
+                context.getString(R.string.vote_count, movieItem?.voteCount.toString())
             itemView.tv_overview.text = movieItem?.overview
 
             itemView.pb_poster_loading.isVisible = true
@@ -78,6 +83,10 @@ class MovieAdapter :
 
                 })
                 .into(itemView.iv_poster)
+
+            itemView.setOnClickListener {
+                clickListener.onMovieClick(movieItem)
+            }
         }
 
     }

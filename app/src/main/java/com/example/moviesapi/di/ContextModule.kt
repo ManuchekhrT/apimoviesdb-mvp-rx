@@ -21,7 +21,7 @@ object ContextModule {
     @Provides
     @JvmStatic
     internal fun provideContext(baseView: BaseView): Context {
-        return baseView.getContext()
+        return baseView.getBaseContext()
     }
 
     /**

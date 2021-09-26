@@ -1,13 +1,14 @@
 package com.example.moviesapi.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Movies(
     @SerializedName("page")
     val page: Int,
     @SerializedName("results")
     val result: List<Movie>
-) {
+): Serializable {
     data class Movie(
         @SerializedName("id")
         val id: Int,
@@ -29,5 +30,5 @@ data class Movies(
         val voteAverage: Number,
         @SerializedName("vote_count")
         val voteCount: Int,
-    )
+    ): Serializable
 }

@@ -9,3 +9,7 @@ const val API_KEY = "api_key"
 const val LANGUAGE = "language"
 const val LANGUAGE_EN_US = "en-US"
 const val PAGE = "page"
+
+const val TAG_MOVIES_FRAG = "movies_fragment"
+const val TAG_MOVIE_DETAIL_FRAG = "movie_detail_fragment"
+const val ARG_LOAD = "load"
