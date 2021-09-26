@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.moviesapi.R
 import com.example.moviesapi.base.BaseFragment
 import com.example.moviesapi.extensions.TAG_MOVIE_DETAIL_FRAG
+import com.example.moviesapi.extensions.showToast
 import com.example.moviesapi.model.Movies
 import kotlinx.android.synthetic.main.fragment_movies.*
 
@@ -85,7 +86,7 @@ class MoviesFragment : BaseFragment<MoviesPresenter>(), MoviesView, OnMoviesList
     }
 
     override fun showError(error: String) {
-        Toast.makeText(getBaseContext(), error, Toast.LENGTH_LONG).show()
+        getBaseContext().showToast(error)
     }
 
     companion object {

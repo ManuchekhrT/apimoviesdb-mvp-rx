@@ -18,7 +18,7 @@ abstract class BaseActivity<P : BasePresenter<BaseView>> : BaseView, AppCompatAc
     protected abstract fun instantiatePresenter(): P
 
     override fun getBaseContext(): Context {
-        return this
+        return applicationContext
     }
 
     override fun onDestroy() {

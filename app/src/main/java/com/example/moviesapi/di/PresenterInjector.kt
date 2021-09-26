@@ -1,6 +1,7 @@
 package com.example.moviesapi.di
 
 import com.example.moviesapi.base.BaseView
+import com.example.moviesapi.ui.MainPresenter
 import com.example.moviesapi.ui.movies.MovieDetailPresenter
 import com.example.moviesapi.ui.movies.MoviesPresenter
 import dagger.BindsInstance
@@ -19,6 +20,7 @@ interface PresenterInjector {
      */
     fun inject(movieDetailPresenter: MovieDetailPresenter)
     fun inject(moviesPresenter: MoviesPresenter)
+    fun inject(mainPresenter: MainPresenter)
 
     @Component.Builder
     interface Builder {

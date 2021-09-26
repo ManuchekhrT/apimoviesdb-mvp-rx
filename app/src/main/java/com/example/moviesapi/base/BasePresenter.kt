@@ -4,6 +4,7 @@ import com.example.moviesapi.di.ContextModule
 import com.example.moviesapi.di.DaggerPresenterInjector
 import com.example.moviesapi.di.NetworkModule
 import com.example.moviesapi.di.PresenterInjector
+import com.example.moviesapi.ui.MainPresenter
 import com.example.moviesapi.ui.movies.MovieDetailPresenter
 import com.example.moviesapi.ui.movies.MoviesPresenter
 
@@ -47,6 +48,7 @@ abstract class BasePresenter<out V : BaseView>(protected val view: V) {
         when (this) {
             is MovieDetailPresenter -> injector.inject(this)
             is MoviesPresenter -> injector.inject(this)
+            is MainPresenter -> injector.inject(this)
         }
     }
 }
